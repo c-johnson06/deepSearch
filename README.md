@@ -57,13 +57,13 @@ docker-compose up -d
 ```
 
 ### 3. Setup backend environment
-# Windows
+Windows
 ```bash
 python -m venv venv
 .\venv\Scripts\activate
 ```
 
-# Install dependencies (GPU version recommended)
+Install dependencies (GPU version recommended)
 ```bash
 pip install torch torchvision --index-url [https://download.pytorch.org/whl/cu121](https://download.pytorch.org/whl/cu121)
 pip install fastapi "uvicorn[standard]" python-multipart opencv-python "psycopg[binary]" sentence-transformers transformers openai-whisper
@@ -74,5 +74,24 @@ pip install fastapi "uvicorn[standard]" python-multipart opencv-python "psycopg[
 cd frontend
 npm install
 ```
+## Usage
 
+### 1. Start backend server
+```bash
+python api/main.py
+```
+### 2. Start frontend server
+```bash
+cd frontend
+npm start
+```
 
+### 3. Open the app in your browser
+Open http://localhost:3000 in your browser to use the app.
+
+### 4. Upload a video
+Click on the upload video button and adjust frame rate sampling rate as needed.
+
+### 5. Search the video
+Enter any query and click search to generate timestamps of the query in the video.
+Adjust the weight of text and visual similarity as needed.
