@@ -48,24 +48,31 @@ Before running the project, ensure you have the following installed:
 ```bash
 git clone [https://github.com/yourusername/deepsearch.git](https://github.com/yourusername/deepsearch.git)
 cd deepsearch
+```
 
 ### 2. Start the Database
 Spin up the PostgreSQL container with vector support.
 ```bash
 docker-compose up -d
+```
 
 ### 3. Setup backend environment
 # Windows
+```bash
 python -m venv venv
 .\venv\Scripts\activate
+```
 
 # Install dependencies (GPU version recommended)
+```bash
 pip install torch torchvision --index-url [https://download.pytorch.org/whl/cu121](https://download.pytorch.org/whl/cu121)
 pip install fastapi "uvicorn[standard]" python-multipart opencv-python "psycopg[binary]" sentence-transformers transformers openai-whisper
+```
 
 ### 4. Setup frontend environment
+```bash
 cd frontend
 npm install
-
+```
 
 
